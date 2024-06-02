@@ -1,9 +1,5 @@
 #!/bin/bash
-
-# For a better look
 clear
-GREEN='/0330[0;32m'
-NONE='/033[0m'
 
 # Functions
 # Check if package is installed
@@ -71,19 +67,6 @@ installer_packages=(
     "rsync"
     "figlet"
 )
-
-echo -e "${GREEN}"
-cat <<"EOF"
- _   _                  _                 _ 
-| | | |_   _ _ __  _ __| | __ _ _ __   __| |
-| |_| | | | | '_ \| '__| |/ _` | '_ \ / _` |
-|  _  | |_| | |_) | |  | | (_| | | | | (_| |
-|_| |_|\__, | .__/|_|  |_|\__,_|_| |_|\__,_|
-       |___/|_|                             
-
-ML4W HYPRLAND BASIC PACKAGE
-EOF
-echo -e "${NONE}"
 
 # Sync package data
 sudo pacman -Sy
@@ -194,10 +177,6 @@ if [ -f ~/.config/hypr/hyprland.conf ] ;then
         fi
     fi
 fi
-
-echo -e "${GREEN}"
-figlet "Done"
-echo -e "${NONE}"
 
 echo "Open ~/.config/hypr/hyprland.conf to check your new initial Hyprland configuration."
 echo
