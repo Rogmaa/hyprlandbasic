@@ -1,11 +1,11 @@
 #!/bin/bash
 clear
 
-# For a better look
-GREEN='/0330[0;32m'
-NONE='/033[0m'
+# Some colors
+GREEN='\033[0;32m'
+NONE='\033[0m'
 
-# Headers
+# Header
 echo -e "${GREEN}"
 cat <<"EOF"
  ____       _               
@@ -20,7 +20,8 @@ echo "for ML4W Hyprland Starter"
 echo
 echo -e "${NONE}"
 
-
+echo "This script will download the ML4W Hyprland Starter and start the installation."
+echo
 while true; do
     read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
     case $yn in
@@ -41,16 +42,21 @@ if [ ! -d ~/Downloads ] ;then
     echo ":: Downloads folder created"
 fi
 
+# Change into Downloads directory
+cd ~/Downloads
+
 # Remove existing folder
-if [ -d ~/Downloads/Hyprland-starter ] ;then
-    rm -rf ~/Downloads/Hyprland-starter
-    echo ":: Existing installation folder removed."
+if [ -d ~/Downloads/hyprland-starter ] ;then
+    rm -rf ~/Downloads/hyprland-starter
+    echo ":: Existing installation folder removed"
 fi
 
-# Clone packages
-git clone --depth 1 https://github.com/Rogmaa/hyprlandbasic
-echo ":: Installation files cloned into Downloads."
+# Clone the packages
+git clone --depth 1 https://gitlab.com/stephan-raabe/hyprland-starter.git
+echo ":: Installation files cloned into Downloads folder"
 
-cd hyprlandbasic
+# Change into the folder
+cd hyprland-starter
 
+# Start the script
 ./install.sh
