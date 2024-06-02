@@ -1,12 +1,5 @@
 #!/bin/bash
 clear
-echo " ____       _               "
-echo "/ ___|  ___| |_ _   _ _ __  "
-echo "\___ \ / _ \ __| | | | '_ \ "
-echo " ___) |  __/ |_| |_| | |_) |"
-echo "|____/ \___|\__|\__,_| .__/ "
-echo "                     |_|    "  
-echo ""
 
 while true; do
     read -p "DO YOU WANT TO START THE INSTALLATION NOW? (Yy/Nn): " yn
